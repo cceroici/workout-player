@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Keep search engines from listing the page. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#121212">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Workout">
+  <title>Workout Player</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video id="video" playsinline controls preload="auto"></video>
+  <audio id="music" preload="auto"></audio>
+
+  <main>
+    <button id="start" class="primary">Start Workout</button>
+    <p id="now-playing" class="dim"></p>
+
+    <div class="row">
+      <button id="next-video" class="link">Next video</button>
+      <button id="next-song" class="link">Next song</button>
+    </div>
+
+    <label for="video-volume">Workout voice volume</label>
+    <input id="video-volume" type="range" min="0" max="100">
+
+    <label for="music-volume">Music volume</label>
+    <input id="music-volume" type="range" min="0" max="100">
+
+    <section class="library">
+      <h2>Library</h2>
+      <p class="dim">Files are copied into this app and stay on this phone. When the picker opens, choose <b>Choose Files</b>, not Photo Library. Photo Library shrinks videos.</p>
+
+      <div class="row">
+        <span id="video-count" class="grow"></span>
+        <label class="link file-button">Add videos<input id="add-videos" type="file" accept="video/*" multiple hidden></label>
+      </div>
+      <div class="row">
+        <span id="music-count" class="grow"></span>
+        <label class="link file-button">Add music<input id="add-music" type="file" accept="audio/*" multiple hidden></label>
+      </div>
+      <p id="import-status" class="dim"></p>
+
+      <details>
+        <summary>Manage files</summary>
+        <ul id="file-list"></ul>
+      </details>
+      <p id="storage" class="dim small"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
