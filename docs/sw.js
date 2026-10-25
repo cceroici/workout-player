@@ -4,7 +4,7 @@
 // Serves the saved copy right away and refreshes it in the background,
 // so updates show up the next time the app is opened.
 
-const CACHE = 'workout-player-v1';
+const CACHE = 'workout-player-v2';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-512.png'];
 
 self.addEventListener('install', (event) => {
